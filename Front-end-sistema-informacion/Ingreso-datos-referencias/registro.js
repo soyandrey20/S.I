@@ -50,7 +50,7 @@ async function sendDataUserReferences() {
 
 async function sendDataUserExperiences() {
     const usuarioExperiences = JSON.parse(localStorage.getItem('usuarioExperiences'));
-    await postData(`${url}/userExperiences`, usuarioExperiences);
+    await postData(`${url}/userExperiences`, usuarioExperiences);  
 }
 
 async function sendDataUserSkills() {
@@ -94,3 +94,5 @@ async function postData(url = '', data = {}) {
         throw new Error(`HTTP error! Status: ${response.status}`);
     }
 }
+
+/** pepito */
