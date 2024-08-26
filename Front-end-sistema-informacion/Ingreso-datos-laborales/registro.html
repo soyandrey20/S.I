@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/assets/logo-vt.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--icono de la pagina-->
+    <link rel="icon" href="../../Images/Logo-removebg-preview.png" type="image/x-icon" />
+
+    <title>SeewtCol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+ 
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#" id="btnBack">
+                <i class='bx bx-left-arrow-alt'></i>
+            </a>
+
+        </nav>
+    </header>
+
+    <div style="padding-bottom: 15px;">
+
+        <div class=" d-flex justify-content-center align-items-center">
+            <div class=" p-4 rounded-5 text-secondary shadow"
+                style="background-color: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px);">
+
+                <div class="text-center fs-3 fw-bold text-dark">Experiencia </div>
+
+
+
+                <div class="input-group mt-3" style=" width: 400px;">
+                    <div class="input-group-text bg-success">
+                        <i class='bx bxs-book'></i>
+                    </div>
+                    <textarea class="form-control bg-light" type="text" placeholder="Títulos Obtenidos"
+                        id="titulosObtenidos" style="resize: none; height: 10px;"></textarea>
+                </div>
+
+                <div class="input-group mt-3">
+                    <div class="input-group-text bg-success">
+                        <i class='bx bxs-school'></i>
+                    </div>
+                    <select class="form-select bg-light" id="nivelEducacion">
+                        <option selected disabled>Nivel de Educación</option>
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Preparatoria">Preparatoria</option>
+                        <option value="Universidad">Universidad</option>
+                        <option value="Posgrado">Posgrado</option>
+                    </select>
+                </div>
+
+
+
+                <div class="input-group mt-3">
+                    <div class="input-group-text bg-success">
+                        <i class='bx bxs-graduation'></i>
+                    </div>
+                    <input class="form-control bg-light" type="text" placeholder="Áreas de Estudio" id="areasEstudio" />
+                </div>
+
+
+
+                <div class="input-group mt-3">
+                    <div class="input-group-text bg-success">
+                        <i class='bx bxs-building'></i>
+                    </div>
+                    <input class="form-control bg-light" type="text" placeholder="Empresa Anterior"
+                        id="empresasAnteriores" />
+                </div>
+                <small class="form-text text-danger" id="msgEmpresasAnteriores"></small>
+
+                <div class="input-group mt-3">
+                    <div class="input-group-text bg-success">
+                        <i class='bx bxs-briefcase'></i>
+                    </div>
+                    <input class="form-control bg-light" type="text" placeholder="Cargo Desempeñado"
+                        id="cargosDesempenados" />
+                </div>
+                <small class="form-text text-danger" id="msgCargosDesempenados"></small>
+
+                <div class="input-group mt-3">
+                    <div class="input-group-text bg-success">
+                        <i class='bx bxs-task'></i>
+                    </div>
+                    <textarea class="form-control bg-light" type="text" placeholder="Funciones" id="funciones"
+                        style="resize:none ; height: 10px;"></textarea>
+                </div>
+                <small class="form-text text-danger" id="msgFunciones"></small>
+
+                <div class="input-group mt-3">
+                    <div class="input-group-text bg-success">
+                        <i class='bx bxs-calendar'></i>
+                    </div>
+                    <input class="form-control bg-light" type="text" placeholder="Tiempo de Servicio"
+                        id="tiempoServicio" />
+                </div>
+                <small class="form-text text-danger" id="msgTiempoServicio"></small>
+
+                <div class="input-group mt-3">
+                    <div class="input-group-text bg-success">
+                        <i class='bx bxs-medal'></i>
+                    </div>
+                    <input class="form-control bg-light" type="text" placeholder="Logros" id="logros" />
+                </div>
+                <small class="form-text text-danger" id="msgLogros"></small>
+                <div class="btn btn-success text-white w-100 mt-3 fw-semibold shadow-sm" id="addUsuario" disabled>
+                    Continuar
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Página Administrativa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="registro.js" type="module"></script>
+ 
+
+</body>
+
+
+</html>

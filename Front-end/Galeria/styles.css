@@ -1,0 +1,68 @@
+.navbar {
+
+    backdrop-filter: blur(30px) !important;
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37) !important;
+    border: 2px solid rgba(255, 255, 255, 0.18) !important;
+    position: sticky !important;
+    top: 0 !important;
+
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    /* Cambia este valor al color que prefieras */
+}
+
+.navbar-nav .nav-link:hover {
+    color: black;
+    /* Color al hacer hover */
+}
+
+a {
+    color: white;
+
+}
+
+p i {
+    padding-right: 10px;
+
+}
+
+p {
+    font-size: 14px;
+}
+
+h3 {
+    font-family: italic;
+    font-size: 25px;
+}
+
+.social-links a {
+
+    padding-left: 12px;
+}
+
+body {
+    background-image: url('../../Images/Fresa-hidroponica.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+ 
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
