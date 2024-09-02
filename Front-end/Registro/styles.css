@@ -1,46 +1,3 @@
-.navbar {
-
-    backdrop-filter: blur(30px) !important;
-    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37) !important;
-    border: 2px solid rgba(255, 255, 255, 0.18) !important;
-
-
-}
-
-.navbar-nav .nav-link {
-    color: white;
-    /* Cambia este valor al color que prefieras */
-}
-
-.navbar-nav .nav-link:hover {
-    color: black;
-    /* Color al hacer hover */
-}
-
-a {
-    color: white;
-
-}
-
-p i {
-    padding-right: 10px;
-
-}
-
-p {
-    font-size: 14px;
-}
-
-h3 {
-    font-family: italic;
-    font-size: 25px;
-}
-
-.social-links a {
-
-    padding-left: 12px;
-}
-
 body {
     background-image: url('../../Images/Fresa-hidroponica.jpg');
     background-size: cover;
@@ -51,37 +8,75 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
- 
+.navbar {
+    backdrop-filter: blur(30px) !important;
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37) !important;
+    border: 2px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: black;
+}
+
+a {
+    color: white;
+}
+
+p i {
+    padding-right: 10px;
+}
+
+p {
+    font-size: 14px;
+}
+
+h3 {
+    font-style: italic;
+    font-size: 25px;
+}
+
+.social-links a {
+    padding-left: 12px;
+}
 
 footer {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 20px;
     text-align: center;
     width: 100%;
+    padding: 10px 0;
 }
 
 body .container {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.container .box {
-    width: 400px;
-    height: 450px;
-    border: 2px solid #625d5d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    backdrop-filter: blur(15px);
-    background: transparent;
+    max-width: 600px; /* Ajusta el ancho máximo según tu necesidad */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    
 }
 
+.container .box {
+    width: 100%; /* Usar 100% para que el box ocupe todo el ancho disponible dentro del container */
+    max-width: 400px;
+    height: auto; /* Deja que la altura se ajuste al contenido */
+    border: 2px solid #625d5d;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    padding: 20px;
+    box-sizing: border-box;
+}
 
 .container h2 {
     font-size: 2em;
@@ -92,8 +87,8 @@ body .container {
 .container .inputbox {
     position: relative;
     margin: 30px 0;
-    width: 300px;
-    border-bottom: 2px solid#fff;
+    width: 100%;
+    border-bottom: 2px solid #fff;
 }
 
 .container .inputbox label {
@@ -107,11 +102,9 @@ body .container {
     transition: 0.5s;
 }
 
- 
 .container .inputbox input:valid ~ label,
 .container .inputbox input:focus ~ label {
     top: -5px;
-     
     color: #e6e2e2;
 }
 
@@ -123,7 +116,7 @@ body .container {
     outline: none;
     font-size: 1em;
     padding: 0 35px 0 5px;
-    color: #000;
+    color: #fff; /* Cambiado de #000 a #fff para mejor contraste */
 }
 
 .container .inputbox ion-icon {
@@ -133,7 +126,6 @@ body .container {
     font-size: 1.2em;
     top: 20px;
 }
-
 
 .container button {
     width: 100%;
@@ -164,8 +156,8 @@ body .container {
     align-items: center;
 }
 
-.container .forget label input[ type="checkbox"] {
-    margin-right: 6px
+.container .forget label input[type="checkbox"] {
+    margin-right: 6px;
 }
 
 .container .forget label a {
@@ -194,4 +186,3 @@ body .container {
     text-decoration: underline;
     color: #000;
 }
-

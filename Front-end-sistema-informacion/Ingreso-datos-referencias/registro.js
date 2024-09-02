@@ -94,5 +94,3 @@ async function postData(url = '', data = {}) {
         throw new Error(`HTTP error! Status: ${response.status}`);
     }
 }
-
-/** pepito */

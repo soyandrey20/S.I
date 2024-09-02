@@ -41,7 +41,8 @@ h3 {
     padding-left: 12px;
 }
 
-body {
+body,
+html {
     background-image: url('../../Images/Fresa-hidroponica.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,27 +53,42 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    justify-content: space-between;
+
+
 }
 
- 
+body .container {
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 150px;
+}
 
 footer {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 20px;
     text-align: center;
     width: 100%;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }
+
 
 body .container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .container .box {
+    padding: 30px;
     width: 400px;
-    height: 450px;
+    height: auto;
+    /* Deja que la altura se ajuste al contenido */
     border: 2px solid #625d5d;
     display: flex;
     justify-content: center;
@@ -90,10 +106,12 @@ body .container {
 }
 
 .container .inputbox {
+
     position: relative;
     margin: 30px 0;
     width: 300px;
     border-bottom: 2px solid#fff;
+
 }
 
 .container .inputbox label {
@@ -107,11 +125,11 @@ body .container {
     transition: 0.5s;
 }
 
- 
-.container .inputbox input:valid ~ label,
-.container .inputbox input:focus ~ label {
+
+.container .inputbox input:valid~label,
+.container .inputbox input:focus~label {
     top: -5px;
-     
+
     color: #e6e2e2;
 }
 
@@ -194,4 +212,3 @@ body .container {
     text-decoration: underline;
     color: #000;
 }
-

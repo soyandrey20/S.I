@@ -1,6 +1,25 @@
 
 
+const logout = document.getElementById('logout');
 
+logout.addEventListener('click', (e) => {
+    e.preventDefault();
+    fetch('http://localhost:3000/logout', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ logout: true })
+    })
+
+        .then(res => res.json())
+        .then(data => {
+            if (data.logout) {
+                window.location.href = 'http://localhost:3000/login';
+            }
+        })
+        .catch(err => console.log(err));
+});
 
 
 
@@ -28,4 +47,4 @@ async function cargarPagina() {
     sidebar.classList.toggle('close');
 }
 
- 
+
