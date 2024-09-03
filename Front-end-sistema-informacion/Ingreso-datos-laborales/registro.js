@@ -14,7 +14,11 @@ addUsuario.addEventListener('click', () => {
         saveUserData();
         pasar();
     } else {
-        alert('Por favor, complete todos los campos correctamente.');
+        swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, complete todos los campos correctamente.',
+        });
     }
 });
 

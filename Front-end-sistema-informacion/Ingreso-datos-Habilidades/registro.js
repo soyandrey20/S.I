@@ -16,7 +16,11 @@ addUsuario.addEventListener('click', () => {
     if (validateSelections()) {
         sendDataStorage();
     } else {
-        alert('Por favor, seleccione una opción en todos los grupos.');
+        swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, seleccione una opción en todos los grupos.',
+        });
     }
 });
 
