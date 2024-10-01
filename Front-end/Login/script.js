@@ -1,6 +1,7 @@
 import { url } from '../../config.js';
 
 let Cedula = '';
+
 const loginBtn = document.getElementById('loginBtn');
 const contraseñaRees = document.getElementById('contraseñaRees');
 const register = document.getElementById('registerr');
@@ -78,6 +79,7 @@ async function sendEmail() {
 
 
 export async function login() {
+
     let userName = document.getElementById('userName').value;
     let password = document.getElementById('password').value;
 
@@ -111,6 +113,9 @@ export async function login() {
         const result = await response.json();
 
         if (response.status === 200) {
+            localStorage.setItem('userName', userName);
+
+
             swal.fire({
                 showConfirmButton: false,
                 title: "Inicio de sesión exitoso",
@@ -148,3 +153,4 @@ export async function login() {
 
 
 loginBtn.addEventListener('click', login);
+

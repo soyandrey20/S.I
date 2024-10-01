@@ -40,6 +40,7 @@ function validateInputs() {
 
 function saveUserData() {
     const usuarioExperiences = {
+        cedula: JSON.parse(localStorage.getItem('usuario')).cedula,
         titulosObtenidos: titulosObtenidos.value,
         nivelEducacion: nivelEducacion.value,
         areasEstudio: areasEstudio.value,

@@ -1,5 +1,5 @@
 const addUsuario = document.getElementById('addUsuario');
-const btnBack = document.getElementById('btnBack');
+ 
 const cedula = document.getElementById('cedula');
 const nombre = document.getElementById('nombreCompleto');
 const genero = document.getElementById('SelectGenero');
@@ -24,10 +24,7 @@ addUsuario.addEventListener('click', () => {
     }
 });
 
-btnBack.addEventListener('click', () => {
-    window.location.href = '../principal/home.html';
-});
-
+ 
 function pasar() {
     window.location.href = '../Ingreso-datos-laborales/registro.html';
 }

@@ -42,6 +42,7 @@ function validateSelections() {
 
 function sendDataStorage() {
     const usuarioSkills = {
+        cedula: JSON.parse(localStorage.getItem('usuario')).cedula,
         dominioSoftware: dominioSoftware.value,
         herramientas: herramientas.value,
         lenguajesProgramacion: lenguajesProgramacion.value,

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/assets/logo-vt.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--icono de la pagina-->
+    <link rel="icon" href="../../Images/Logo-removebg-preview.png" type="image/x-icon" />
+
+    <title>SeewtCol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="../Principal/home.html" id="btnBack">
+                <i class='bx bx-left-arrow-alt'></i>
+            </a>
+
+        </nav>
+    </header>
+
+    <div style="padding-bottom: 15px;">
+ 
+            <div class="d-flex justify-content-center align-items-center p-4">
+                <div class=" p-4 rounded-5 text-secondary shadow"
+                    style="background-color: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px);">
+                    <h2 class="text-center fs-3 fw-bold text-dark">Ingreso de Datos de Nómina</h2>
+
+                    
+                    <div class="input-group mb-3">
+                        <div class="input-group-text bg-success">
+                            <i class='bx bxs-id-card'></i>
+          
+                        </div>
+                        <select class="form-control bg-light" id="cedula">
+
+
+                        </select>
+                    </div>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-text bg-success">
+                            </div>
+                             <input type="number" class="form-control" id="salarioBase" name="salarioBase"  required placeholder="Salario base">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-text bg-success">
+                            </div>
+
+                            <input type="number" class="form-control" id="bonificaciones" name="bonificaciones"   placeholder="Bonificaciones">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-text bg-success">
+                            </div>
+                            <input type="number" class="form-control" id="deducciones" name="deducciones"   placeholder="Deducciones">
+                        </div>
+                        <div class=" input-group">
+
+                            <div class="input-group-text bg-success">
+                            </div>
+
+                            <input type="date" class="form-control" id="fechaPago" name="fechaPago" required>
+                        </div>
+                        <div class="mb-3" hidden>
+                            <label for="idContrato" class="form-label">ID Contrato</label>
+                            <input type="number" class="form-control" id="idContrato" name="idContrato">
+                        </div>
+                        
+                  
+
+
+
+                    <but class="btn btn-success text-white w-100 mt-3 fw-semibold shadow-sm" id="addUsuario" disabled>
+                        Guardar
+                </div>
+            </div>
+
+
+        
+
+    </div>
+
+
+
+    <footer class="footer">
+        <p>© 2024 Página Administrativa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="registro.js" type="module"></script>
+
+
+</body>
+
+
+</html>

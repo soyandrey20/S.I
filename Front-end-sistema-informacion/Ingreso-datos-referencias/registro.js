@@ -36,6 +36,7 @@ async function sendDataUserReferences() {
     const seleccionadoC = getSelectedValue(pruebasConocimiento);
 
     const dataReferences = {
+        cedula: JSON.parse(localStorage.getItem('usuario')).cedula,
         nombreReferencia: nombreReferencia.value,
         cargo: cargo.value,
         empresa: empresa.value,

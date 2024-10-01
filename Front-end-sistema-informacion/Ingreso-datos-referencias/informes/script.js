@@ -5,7 +5,7 @@ import { url } from '../../../config.js';
 
 const tableData = document.getElementById('tableData');
 
- 
+
 
 
 const inputs = document.querySelectorAll('input');
@@ -16,7 +16,7 @@ let dataD = null;
 
 const fincas = [];
 
- 
+
 
 
 async function cargarTabla() {
@@ -43,12 +43,12 @@ async function cargarTabla() {
         <td id="apellido1">${user.email || ''}</td>
         <td id="apellido2">${user.fechaNacimiento || ''}</td>
         <td id="Email">${user.direccion}</td>
-        <td id="Estado">${user.telefono}</td>
+        <td id="Telefono">${user.telefono}</td>
+        <td id="Contrato">${user.contratado ? 'Si' : 'No'}</td>
         <td>
-          <a href="#" class="btn-add"><i class='bx bxs-plus-circle' ></i></a>
-          <a href="#" class="btn-update"><i class='bx bxs-edit-alt'></i></a>
-          <a href="#" class="btn-delete"><i class='bx bxs-trash-alt'></i></a> 
-          <a href="#" class="btn-activate"><i class='bx bxs-check-circle'></i></a> 
+          <a href="#" class="btn-add" title="agregar"><i class='bx bxs-plus-circle' ></i></a>
+ 
+ 
           
         </td>
       `;
@@ -88,7 +88,7 @@ window.addEventListener('DOMContentLoaded', cargarTabla);
 window.addEventListener('click', async (e) => {
   count = 0;
   if (e.target.classList.contains('bxs-plus-circle')) {
-    window.location.href = `/vistas/RegistrarUsuario/registro.html`;
+    window.location.href = `../../Ingreso-datos-personales/registro.html`;
   }
   else if (e.target.classList.contains('bxs-edit-alt')) {
 
@@ -273,7 +273,7 @@ async function activateUser() {
 }
 
 
- 
+
 function validarFincasActivas() {
   let opt = true;
 
@@ -287,3 +287,31 @@ function validarFincasActivas() {
   return opt;
 }
 
+const btnSendFile = document.getElementById('btnSendFile');
+
+btnSendFile.addEventListener('click', async () => {
+  swal.fire({
+    title: "¿Está seguro de que desea enviar el informe por correo",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sí",
+    cancelButtonText: "No",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      sendFile();
+    }
+  }
+  );
+}
+);
+
+
+
+async function sendFile() {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `${url}/export-pdf`, true);
+  xhr.send();
+}
+
+
+ 
