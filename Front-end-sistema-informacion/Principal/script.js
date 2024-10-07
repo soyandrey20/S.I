@@ -46,6 +46,7 @@ async function cargarPagina() {
 
 
 const cedulaGetFromLocalStorage = localStorage.getItem('userName');
+const optInfo = document.getElementById('optInfo');
 
 function cargarNombreUsuario() {
     fetch(`http://localhost:3000/user/${cedulaGetFromLocalStorage}`, {
@@ -62,6 +63,14 @@ function cargarNombreUsuario() {
             } else {
                 console.error('El campo "nombre" no existe en la respuesta.');
             }
+            
+            if (data && data.permiso === true) {
+                // no hacer nada
+            } else {
+                optInfo.style.display = 'none';
+            }
+
         })
         .catch(err => console.log(err));
 }
+

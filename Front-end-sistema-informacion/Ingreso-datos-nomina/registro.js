@@ -12,11 +12,13 @@ function getUsers() {
             const selectCedula = document.getElementById('cedula');
 
             users.forEach(user => {
-                if (!user.contratado) {
+               
+                if (user.contratado) {
                     const option = document.createElement('option');
                     option.value = user.cedula;;
                     option.textContent = user.nombre;
                     selectCedula.appendChild(option);
+                    
                 }
             });
 
