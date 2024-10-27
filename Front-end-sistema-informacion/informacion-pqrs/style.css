@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+
+
+
+body {
+    background-image: url('../../../Images/Fresa-hidroponica.jpg');
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: space-between;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #9a8d70;
+    margin-bottom: 60px;
+
+}
+
+/* Cambia el color del texto de la información de la tabla */
+.dataTables_wrapper .dataTables_info {
+    color: white;
+    /* Cambia el color a tu preferido */
+}
+
+ .dataTables_wrapper  .dataTables_length {
+    color: white;
+    /* Cambia el color a tu preferido */
+ }
+
+.dataTables_wrapper .dataTables_filter {
+    color: white;
+    /* Cambia el color a tu preferido */
+
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    color: white;
+    /* Cambia el color a tu preferido */
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #1d1b31;
+    text-align: center;
+    align-items: center;
+    color: #fff;
+    line-height: 60px;
+}
+
+
+
+header {
+
+    backdrop-filter: blur(30px) !important;
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37) !important;
+    border: 2px solid rgba(255, 255, 255, 0.18) !important;
+    justify-content: space-between;
+    font-size: 30px;
+    padding-left: 30px;
+
+}
+
+select {
+
+    appearance: none;
+
+}
+
+
+nav a,
+ul {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 0 35px;
+    font-size: 55px;
+    margin: 0px 15px;
+
+}
+
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.encabezado-img p {
+    font-size: 45px;
+}
+
+.encabezado-img h1 {
+    font-size: 70px;
+    padding: 15px 0;
+
+}
+
+#userTable th {
+
+    font-size: 20px;
+
+}
+
+#userTable tbody tr td {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 17px;
+    color: black;
+}

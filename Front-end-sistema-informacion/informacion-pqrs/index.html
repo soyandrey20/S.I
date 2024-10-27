@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Página Administrativa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../Principal/home.html" id="btnBack" title="Regresar">
+                <i class='bx bx-left-arrow-alt'></i>
+            </a>
+            <!-- <a href="#" id="btnSendFile" title="enviar informe"><i class='bx bx-mail-send'></i></a> -->
+            <!-- <a href="http://192.168.1.2:3000/export-pdf" id="btnDownload" title="Descargar informe"><i class='bx bxs-download'></i></a> -->
+            
+
+        </nav>
+    </header>
+
+    <div>
+
+        <div class=" d-flex justify-content-center align-items-center">
+            <div class="col-md-30 content">
+                <div class="container">
+                    <h2 class="text-center" style="color: white; padding-top: 36px; ">Listado de PQRS</h2>
+                    <table id="userTable" class="table table-striped table-hover table-bordered border-black" >
+                        <thead class="table-dark  ">
+                            <tr class="text-center ">
+
+                                <th>Nombre</th>
+                                <th>Empresa</th>
+                                <th>Correo electronico</th>
+                                <th>Telefono</th>
+                                <th>Tipo de peticion</th>
+                                <th>Motivo</th>
+ 
+                            </tr>
+
+                        </thead>
+                        <tbody id="tableData" class="text-center">
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer>
+            <p>© 2024 Página Administrativa. Todos los derechos reservados.</p>
+        </footer>
+
+
+    </div>
+
+    <script src="script.js" type="module"></script>
+
+
+
+
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+</body>
+
+</html>

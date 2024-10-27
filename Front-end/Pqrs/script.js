@@ -41,7 +41,9 @@ async function enviarDatos() {
             const result = await response.json();
             if (response.status === 201) {
                 mostrarAlerta(`${tipo.value} enviado con exito`, false);
-                window.location.reload();
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
             } else {
                 if (response.status === 400) {
                     mostrarAlerta('Por favor confirmar que no eres un robot', true);

@@ -1,4 +1,4 @@
-
+import { url } from '../../config.js';
 
 
 const logout = document.getElementById('logout');
@@ -47,6 +47,8 @@ async function cargarPagina() {
 
 const cedulaGetFromLocalStorage = localStorage.getItem('userName');
 const optInfo = document.getElementById('optInfo');
+const optPqrs = document.getElementById('optPqrs');
+
 
 function cargarNombreUsuario() {
     fetch(`http://localhost:3000/user/${cedulaGetFromLocalStorage}`, {
@@ -63,11 +65,12 @@ function cargarNombreUsuario() {
             } else {
                 console.error('El campo "nombre" no existe en la respuesta.');
             }
-            
+
             if (data && data.permiso === true) {
                 // no hacer nada
             } else {
                 optInfo.style.display = 'none';
+                optPqrs.style.display = 'none';
             }
 
         })
@@ -78,14 +81,49 @@ const btnOpen = document.getElementById('btn-open');
 const btnClose = document.getElementById('btn-close');
 const chatPopup = document.getElementById('chat-popup');
 
-// Abrir el chatbot
-btnOpen.addEventListener('click', () => {
-    chatPopup.style.display = 'block';
-   btnOpen.hidden = true;
-});
+function notify() {
+    if (!("Notification" in window)) {
+        alert("Este navegador no soporta notificaciones de escritorio");
+    } else if (Notification.permission === "granted") {
+        new Notification("!Backup realizado con éxito");
+    } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(function (permission) {
+            if (permission === "granted") {
+                new Notification("!Backup realizado con éxito");
+            }
+        });
+    }
+}
 
-// Cerrar el chatbot
-btnClose.addEventListener('click', () => {
-    chatPopup.style.display = 'none';
-    btnOpen.hidden = false;
-});
+//funcion para ejecutar la notificacion cada 5 segundos
+// setInterval(notify, 5000);
+
+//funcion para hacer backup al sistema
+async function backup() {
+    fetch(`${url}/backup`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ backup: true })
+
+    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            console.log('Backup realizado con éxito');
+        })
+        .catch(err => console.log(err));
+}
+
+//funcion para guardar backup y notificar
+function backupNotify() {
+    //mostrar mensaje que el backup se va a realizar y luego de 5 segundos se ejecuta la funcion backup
+    new Notification("El sistema se va a respaldar en 1 Minutos");
+    setTimeout(() => {
+        notify();
+        backup();
+    }, 25000);
+}
+
+setInterval(backupNotify, 35000);

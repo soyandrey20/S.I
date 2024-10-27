@@ -123,3 +123,32 @@ async function renderEducationChart() {
 
 // Llamar a la función para cargar los datos y renderizar el gráfico
 renderEducationChart();
+
+// Función para cargar los datos desde el backend y renderizar el gráfico de pqrs
+async function renderPqrsChart() {
+    try {
+        // Solicitar los datos de pqrs al endpoint
+        const response = await fetch(`${url}/pqrs`);
+        const data = await response.json();
+
+        // Extraer las categorías y cantidades
+        const labels = data.map(item => item.tipo_peticion); // Ejemplo: ["Sugerencia", "Reclamo"]
+        const series = data.map(item => item.total);  // Ejemplo: [30, 20]
+
+        // Configurar el gráfico de dona
+        var pqrsOptions = {
+            chart: { type: 'donut', height: '200px' },
+            series: series,  // Los valores obtenidos del backend
+            labels: labels   // Etiquetas obtenidas del backend
+        };
+
+        var pqrsChart = new ApexCharts(document.querySelector("#pqrs-chart"), pqrsOptions);
+        pqrsChart.render();
+
+    } catch (err) {
+        console.error("Error al cargar el gráfico de pqrs: ", err);
+    }
+}
+
+// Llamar a la función para cargar los datos y renderizar el gráfico
+renderPqrsChart();
