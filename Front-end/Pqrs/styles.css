@@ -1,0 +1,74 @@
+.navbar {
+
+    backdrop-filter: blur(100px) !important;
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.37) !important;
+    border: 2px solid rgba(255, 255, 255, 0.18) !important;
+    position: sticky !important;
+    top: 0 !important;
+
+}
+
+.navbar-nav .nav-link {
+    color: black;
+    /* Cambia este valor al color que prefieras */
+}
+
+.navbar-nav .nav-link:hover {
+    color: white;
+    /* Color al hacer hover */
+}
+
+ 
+ 
+ 
+body {
+    background-image: url('../../Images/asistente.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+ 
+
+.btn-wsp{
+    position:fixed;
+    width:60px;
+    height:60px;
+    line-height: 63px;
+    bottom:100px;
+    right:25px;
+    background:#25d366;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    font-size:35px;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.3);
+    z-index:100;
+    transition: all 300ms ease;
+}
+.btn-wsp:hover{
+    background: #20ba5a;
+}
+@media only screen and (min-width:320px) and (max-width:768px){
+    .btn-wsp{
+        width:63px;
+        height:63px;
+        line-height: 66px;
+	}
+}

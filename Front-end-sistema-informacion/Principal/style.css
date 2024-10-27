@@ -486,3 +486,72 @@ body {
     height: 300px;
     border-radius: 5rem;
 }
+
+
+.container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.chat-popup {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    right: 0;
+    bottom: 50px; /* Distancia del botón */
+    width: 300px; /* Ancho del chatbot */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.chat-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-body {
+    max-height: 300px; /* Altura máxima del cuerpo */
+    overflow-y: auto; /* Desplazamiento vertical */
+    padding: 10px;
+}
+
+.chat-text {
+    display: flex;
+    padding: 10px;
+}
+
+.chat-text input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-open {
+    position: relative;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.btn-close {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

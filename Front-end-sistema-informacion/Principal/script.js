@@ -74,3 +74,18 @@ function cargarNombreUsuario() {
         .catch(err => console.log(err));
 }
 
+const btnOpen = document.getElementById('btn-open');
+const btnClose = document.getElementById('btn-close');
+const chatPopup = document.getElementById('chat-popup');
+
+// Abrir el chatbot
+btnOpen.addEventListener('click', () => {
+    chatPopup.style.display = 'block';
+   btnOpen.hidden = true;
+});
+
+// Cerrar el chatbot
+btnClose.addEventListener('click', () => {
+    chatPopup.style.display = 'none';
+    btnOpen.hidden = false;
+});
