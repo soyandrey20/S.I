@@ -123,7 +123,7 @@ function backupNotify() {
     setTimeout(() => {
         notify();
         backup();
-    }, 25000);
+    }, 50000);
 }
 
-setInterval(backupNotify, 35000);
+setInterval(backupNotify, 100000);
