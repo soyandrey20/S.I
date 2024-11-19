@@ -118,12 +118,12 @@ async function backup() {
 
 //funcion para guardar backup y notificar
 function backupNotify() {
-    //mostrar mensaje que el backup se va a realizar y luego de 5 segundos se ejecuta la funcion backup
-    new Notification("El sistema se va a respaldar en 1 Minutos");
+    //mostrar mensaje que el backup se va a realizar y luego de 3 minutos se ejecuta la funcion backup
+    new Notification("El sistema se va a respaldar en 3 minutos");
     setTimeout(() => {
         notify();
         backup();
-    }, 50000);
+    }, 180000);
 }
 
-setInterval(backupNotify, 100000);
+setInterval(backupNotify, 360000);

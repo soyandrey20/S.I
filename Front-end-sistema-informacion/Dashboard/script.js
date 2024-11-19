@@ -1,5 +1,43 @@
 import { url } from '../../config.js';
 
+// const enviarReporte = document.getElementById('enviarReporte');
+
+// //Enviar solicitud para que el backend genere y envie el reporte
+// enviarReporte.addEventListener('click', async () => {
+//     try {
+//         const response = await fetch(`${url}/export-pdf/sendEmail`, {
+//             method: 'GET',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify({ reporte: true })
+//         });
+//         const data = await response.json();
+
+//         if (response.status === 200) {
+//             swal.fire({
+//                 title: 'Enviando solicitud de reporte',
+//                 text: 'Por favor espere un momento',
+//                 icon: 'info',
+//                 showConfirmButton: false
+//             }).then(() => {
+//                 swal.fire({
+//                     title: 'Solicitud enviada',
+//                     text: 'El reporte se ha enviado a su correo electrónico',
+//                     icon: 'success',
+//                     showConfirmButton: false,
+//                     timer: 2000
+//                 });
+//             });
+
+//         }
+//     } catch (err) {
+//         console.error("Error al enviar la solicitud de reporte: ", err);
+//     }
+// });
+
+
+
 
 // Función para cargar los datos desde el backend y renderizar el gráfico
 async function renderGenderChart() {
@@ -12,15 +50,15 @@ async function renderGenderChart() {
         // Extraer los géneros y cantidades
         const labels = data.map(item => item.genero); // Ejemplo: ["Hombre", "Mujer"]
         const series = data.map(item => item.total);  // Ejemplo: [30, 20]
-       
-        
+
+
         // Configurar el gráfico de torta
         var genderOptions = {
             chart: { type: 'pie', height: '200px' },
             series: series,  // Los valores obtenidos del backend
             labels: labels,   // Etiquetas obtenidas del backend
-           
- 
+
+
 
         };
 
@@ -47,6 +85,13 @@ async function renderAgeChart() {
         const labels = data.map(item => item.edad); // Ejemplo: ["18-25", "26-35"]
         const series = data.map(item => item.total);  // Ejemplo: [30, 20]
 
+        // Calcular el promedio de las edades
+        const totalEdades = data.reduce((sum, item) => sum + (item.edad * item.total), 0);
+        const totalPersonas = data.reduce((sum, item) => sum + item.total, 0);
+        // Calcular el promedio de las edades pero con numeros enteros
+        const promedioEdad = totalEdades / totalPersonas;
+
+
         // Configurar el gráfico de barras
         var ageOptions = {
             chart: { type: 'bar', height: '200px' },
@@ -56,6 +101,11 @@ async function renderAgeChart() {
 
         var ageChart = new ApexCharts(document.querySelector("#age-chart"), ageOptions);
         ageChart.render();
+
+        // Mostrar el promedio de edad debajo del gráfico
+        const promedioEdadElement = document.createElement('div');
+        promedioEdadElement.innerText = `Promedio de las Edades : ${promedioEdad.toFixed(0)}`;
+        document.querySelector("#age-chart").appendChild(promedioEdadElement);
 
     } catch (err) {
         console.error("Error al cargar el gráfico de edad: ", err);
